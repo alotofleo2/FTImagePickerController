@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B30CF2A51CFA6C5600755DA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2A41CFA6C5600755DA8 /* main.m */; };
+		B30CF2A81CFA6C5600755DA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2A71CFA6C5600755DA8 /* AppDelegate.m */; };
+		B30CF2AB1CFA6C5600755DA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2AA1CFA6C5600755DA8 /* ViewController.m */; };
+		B30CF2AE1CFA6C5600755DA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30CF2AC1CFA6C5600755DA8 /* Main.storyboard */; };
+		B30CF2B01CFA6C5600755DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30CF2AF1CFA6C5600755DA8 /* Assets.xcassets */; };
+		B30CF2B31CFA6C5600755DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30CF2B11CFA6C5600755DA8 /* LaunchScreen.storyboard */; };
+		B30CF2BC1CFA6D6E00755DA8 /* FTImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B30CF2BB1CFA6D6E00755DA8 /* FTImagePickerController.bundle */; };
+		B30CF2C81CFA747500755DA8 /* UIImage+FTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2C71CFA747500755DA8 /* UIImage+FTHelper.m */; };
+		B30CF2CF1CFA753A00755DA8 /* FTImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2CB1CFA753A00755DA8 /* FTImagePickerController.m */; };
+		B30CF2D31CFA758C00755DA8 /* FTAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2D21CFA758C00755DA8 /* FTAlbumsViewController.m */; };
+		B30CF2D61CFA75A900755DA8 /* FTGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2D51CFA75A900755DA8 /* FTGridViewController.m */; };
+		B30CF2D91CFA75F300755DA8 /* FTImageClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2D81CFA75F300755DA8 /* FTImageClipViewController.m */; };
+		B30CF2DC1CFA761B00755DA8 /* FTGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2DB1CFA761B00755DA8 /* FTGridViewCell.m */; };
+		B30CF2DF1CFA76C900755DA8 /* FTBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2DE1CFA76C900755DA8 /* FTBadgeView.m */; };
+		B30CF2E21CFA785600755DA8 /* FTAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2E11CFA785600755DA8 /* FTAlbumsViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B30CF2A01CFA6C5600755DA8 /* FTImagePickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTImagePickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30CF2A41CFA6C5600755DA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B30CF2A61CFA6C5600755DA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B30CF2A71CFA6C5600755DA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B30CF2A91CFA6C5600755DA8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B30CF2AA1CFA6C5600755DA8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B30CF2AD1CFA6C5600755DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B30CF2AF1CFA6C5600755DA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B30CF2B21CFA6C5600755DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B30CF2B41CFA6C5600755DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B30CF2BB1CFA6D6E00755DA8 /* FTImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTImagePickerController.bundle; sourceTree = "<group>"; };
+		B30CF2C61CFA747500755DA8 /* UIImage+FTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FTHelper.h"; sourceTree = "<group>"; };
+		B30CF2C71CFA747500755DA8 /* UIImage+FTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FTHelper.m"; sourceTree = "<group>"; };
+		B30CF2CA1CFA753A00755DA8 /* FTImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTImagePickerController.h; sourceTree = "<group>"; };
+		B30CF2CB1CFA753A00755DA8 /* FTImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTImagePickerController.m; sourceTree = "<group>"; };
+		B30CF2D11CFA758C00755DA8 /* FTAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAlbumsViewController.h; sourceTree = "<group>"; };
+		B30CF2D21CFA758C00755DA8 /* FTAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAlbumsViewController.m; sourceTree = "<group>"; };
+		B30CF2D41CFA75A900755DA8 /* FTGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGridViewController.h; sourceTree = "<group>"; };
+		B30CF2D51CFA75A900755DA8 /* FTGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGridViewController.m; sourceTree = "<group>"; };
+		B30CF2D71CFA75F300755DA8 /* FTImageClipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTImageClipViewController.h; sourceTree = "<group>"; };
+		B30CF2D81CFA75F300755DA8 /* FTImageClipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTImageClipViewController.m; sourceTree = "<group>"; };
+		B30CF2DA1CFA761B00755DA8 /* FTGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGridViewCell.h; sourceTree = "<group>"; };
+		B30CF2DB1CFA761B00755DA8 /* FTGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGridViewCell.m; sourceTree = "<group>"; };
+		B30CF2DD1CFA76C900755DA8 /* FTBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBadgeView.h; sourceTree = "<group>"; };
+		B30CF2DE1CFA76C900755DA8 /* FTBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBadgeView.m; sourceTree = "<group>"; };
+		B30CF2E01CFA785600755DA8 /* FTAlbumsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAlbumsViewCell.h; sourceTree = "<group>"; };
+		B30CF2E11CFA785600755DA8 /* FTAlbumsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAlbumsViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B30CF29D1CFA6C5600755DA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B30CF2971CFA6C5600755DA8 = {
+			isa = PBXGroup;
+			children = (
+				B30CF2A21CFA6C5600755DA8 /* FTImagePickerController */,
+				B30CF2A11CFA6C5600755DA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B30CF2A11CFA6C5600755DA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2A01CFA6C5600755DA8 /* FTImagePickerController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B30CF2A21CFA6C5600755DA8 /* FTImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2BA1CFA6D6E00755DA8 /* FTPhotosLib */,
+				B30CF2A61CFA6C5600755DA8 /* AppDelegate.h */,
+				B30CF2A71CFA6C5600755DA8 /* AppDelegate.m */,
+				B30CF2A91CFA6C5600755DA8 /* ViewController.h */,
+				B30CF2AA1CFA6C5600755DA8 /* ViewController.m */,
+				B30CF2AC1CFA6C5600755DA8 /* Main.storyboard */,
+				B30CF2AF1CFA6C5600755DA8 /* Assets.xcassets */,
+				B30CF2B11CFA6C5600755DA8 /* LaunchScreen.storyboard */,
+				B30CF2B41CFA6C5600755DA8 /* Info.plist */,
+				B30CF2A31CFA6C5600755DA8 /* Supporting Files */,
+			);
+			path = FTImagePickerController;
+			sourceTree = "<group>";
+		};
+		B30CF2A31CFA6C5600755DA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2A41CFA6C5600755DA8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B30CF2BA1CFA6D6E00755DA8 /* FTPhotosLib */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2BB1CFA6D6E00755DA8 /* FTImagePickerController.bundle */,
+				B30CF2C41CFA745000755DA8 /* Utils */,
+				B30CF2C91CFA753A00755DA8 /* Controllers */,
+				B30CF2CC1CFA753A00755DA8 /* Views */,
+			);
+			path = FTPhotosLib;
+			sourceTree = "<group>";
+		};
+		B30CF2C41CFA745000755DA8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2C51CFA745000755DA8 /* Category */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B30CF2C51CFA745000755DA8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2C61CFA747500755DA8 /* UIImage+FTHelper.h */,
+				B30CF2C71CFA747500755DA8 /* UIImage+FTHelper.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B30CF2C91CFA753A00755DA8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2CA1CFA753A00755DA8 /* FTImagePickerController.h */,
+				B30CF2CB1CFA753A00755DA8 /* FTImagePickerController.m */,
+				B30CF2D11CFA758C00755DA8 /* FTAlbumsViewController.h */,
+				B30CF2D21CFA758C00755DA8 /* FTAlbumsViewController.m */,
+				B30CF2D41CFA75A900755DA8 /* FTGridViewController.h */,
+				B30CF2D51CFA75A900755DA8 /* FTGridViewController.m */,
+				B30CF2D71CFA75F300755DA8 /* FTImageClipViewController.h */,
+				B30CF2D81CFA75F300755DA8 /* FTImageClipViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B30CF2CC1CFA753A00755DA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B30CF2E01CFA785600755DA8 /* FTAlbumsViewCell.h */,
+				B30CF2E11CFA785600755DA8 /* FTAlbumsViewCell.m */,
+				B30CF2DA1CFA761B00755DA8 /* FTGridViewCell.h */,
+				B30CF2DB1CFA761B00755DA8 /* FTGridViewCell.m */,
+				B30CF2DD1CFA76C900755DA8 /* FTBadgeView.h */,
+				B30CF2DE1CFA76C900755DA8 /* FTBadgeView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B30CF29F1CFA6C5600755DA8 /* FTImagePickerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B30CF2B71CFA6C5600755DA8 /* Build configuration list for PBXNativeTarget "FTImagePickerController" */;
+			buildPhases = (
+				B30CF29C1CFA6C5600755DA8 /* Sources */,
+				B30CF29D1CFA6C5600755DA8 /* Frameworks */,
+				B30CF29E1CFA6C5600755DA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTImagePickerController;
+			productName = FTImagePickerController;
+			productReference = B30CF2A01CFA6C5600755DA8 /* FTImagePickerController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B30CF2981CFA6C5600755DA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = taofang;
+				TargetAttributes = {
+					B30CF29F1CFA6C5600755DA8 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W6P99MFM4M;
+					};
+				};
+			};
+			buildConfigurationList = B30CF29B1CFA6C5600755DA8 /* Build configuration list for PBXProject "FTImagePickerController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B30CF2971CFA6C5600755DA8;
+			productRefGroup = B30CF2A11CFA6C5600755DA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B30CF29F1CFA6C5600755DA8 /* FTImagePickerController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B30CF29E1CFA6C5600755DA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30CF2B31CFA6C5600755DA8 /* LaunchScreen.storyboard in Resources */,
+				B30CF2BC1CFA6D6E00755DA8 /* FTImagePickerController.bundle in Resources */,
+				B30CF2B01CFA6C5600755DA8 /* Assets.xcassets in Resources */,
+				B30CF2AE1CFA6C5600755DA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B30CF29C1CFA6C5600755DA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30CF2D61CFA75A900755DA8 /* FTGridViewController.m in Sources */,
+				B30CF2E21CFA785600755DA8 /* FTAlbumsViewCell.m in Sources */,
+				B30CF2AB1CFA6C5600755DA8 /* ViewController.m in Sources */,
+				B30CF2DF1CFA76C900755DA8 /* FTBadgeView.m in Sources */,
+				B30CF2A81CFA6C5600755DA8 /* AppDelegate.m in Sources */,
+				B30CF2D91CFA75F300755DA8 /* FTImageClipViewController.m in Sources */,
+				B30CF2DC1CFA761B00755DA8 /* FTGridViewCell.m in Sources */,
+				B30CF2CF1CFA753A00755DA8 /* FTImagePickerController.m in Sources */,
+				B30CF2D31CFA758C00755DA8 /* FTAlbumsViewController.m in Sources */,
+				B30CF2A51CFA6C5600755DA8 /* main.m in Sources */,
+				B30CF2C81CFA747500755DA8 /* UIImage+FTHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B30CF2AC1CFA6C5600755DA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B30CF2AD1CFA6C5600755DA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B30CF2B11CFA6C5600755DA8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B30CF2B21CFA6C5600755DA8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B30CF2B51CFA6C5600755DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B30CF2B61CFA6C5600755DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B30CF2B81CFA6C5600755DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FTImagePickerController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meilishuo.FTImagePickerController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B30CF2B91CFA6C5600755DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FTImagePickerController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meilishuo.FTImagePickerController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B30CF29B1CFA6C5600755DA8 /* Build configuration list for PBXProject "FTImagePickerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30CF2B51CFA6C5600755DA8 /* Debug */,
+				B30CF2B61CFA6C5600755DA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B30CF2B71CFA6C5600755DA8 /* Build configuration list for PBXNativeTarget "FTImagePickerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30CF2B81CFA6C5600755DA8 /* Debug */,
+				B30CF2B91CFA6C5600755DA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B30CF2981CFA6C5600755DA8 /* Project object */;
+}
