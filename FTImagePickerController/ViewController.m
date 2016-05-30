@@ -40,9 +40,11 @@
 
 - (void)assetsPickerController:(FTImagePickerController *)picker didFinishPickingAssets:(NSArray *)assets {
     [picker.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"当前选择图片集合 -> %@", assets);
+//    NSLog(@"当前选择图片集合 -> %@", assets);
 }
-
+- (void)assetsPickerController:(FTImagePickerController *)picker didFinishPickingImages:(NSArray<UIImage *> *)images {
+    NSLog(@"当前选择图片集合 -> %@", images);
+}
 - (void)assetsPickerController:(FTImagePickerController *)picker didFinishPickingImage:(UIImage *)image {
     [picker.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     NSLog(@"当前编辑图片 -> %@", image);

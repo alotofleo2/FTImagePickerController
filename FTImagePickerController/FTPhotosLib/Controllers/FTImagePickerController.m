@@ -65,8 +65,12 @@
     }
     if ([self.delegate respondsToSelector:@selector(assetsPickerController:didFinishPickingImages:)]) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [self.delegate assetsPickerController:self  didFinishPickingImages:[self selectedImages]];
+            NSArray *arr = [self selectedImages];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate assetsPickerController:self  didFinishPickingImages:arr];
+            });
         });
+
     }
 }
 
@@ -95,7 +99,8 @@
     options.synchronous = YES;
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:self.selectedAssets.count];
     for (PHAsset *asset in self.selectedAssets) {
-        [[FTAssetsImageManager sharedInstance].phCachingImageManager requestImageForAsset:asset targetSize:CGSizeMake(MAXFLOAT, MAXFLOAT) contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        CGFloat scale = [UIScreen mainScreen].scale;
+        [[FTAssetsImageManager sharedInstance].phCachingImageManager requestImageForAsset:asset targetSize:CGSizeMake([UIScreen mainScreen].bounds.size.width * scale, [UIScreen mainScreen].bounds.size.height * scale) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey] && ![[info objectForKey:PHImageResultIsDegradedKey] boolValue];
             if (downloadFinined) {
                 [images addObject:result];
