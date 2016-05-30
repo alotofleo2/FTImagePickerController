@@ -73,12 +73,10 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
     _selectionButton.selected = [self imageIsSelectedWithIndex:self.currentIndex];
 }
 - (void)viewDidLoad {
-    
-    
     [super viewDidLoad];
     [self initializePageControl];
     [self initializeCollectionView];
-
+    self.view.backgroundColor = [UIColor blackColor];
     UIButton *selectionButton = [UIButton buttonWithType:UIButtonTypeCustom];
     selectionButton.bounds = CGRectMake(0,0,27,27);
     selectionButton.contentMode = UIViewContentModeTopRight;
@@ -102,7 +100,7 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
     if (self = [super init]) {
         self.picker = picker;
         self.options = [[PHImageRequestOptions alloc]init];
-        self.view.backgroundColor = [UIColor blackColor];
+        
     }
     return self;
 }
@@ -158,14 +156,18 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
     }
     [[FTAssetsImageManager sharedInstance].phCachingImageManager startCachingImagesForAssets:temAssets.copy targetSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) contentMode:PHImageContentModeAspectFill options:self.options];
 }
+
 #pragma mark scrollView delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSInteger index = (NSInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width);
     if (self.currentIndex != index) {
         self.currentIndex = index;
         _selectionButton.selected = [self imageIsSelectedWithIndex:self.currentIndex];
+        NSAssert(self.shouldSelectItemBlock, @"shouldSelectItemBlock cannot be nil");
+        _selectionButton.enabled = self.shouldSelectItemBlock();
     }
 }
+
 #pragma mark 判断是否是被选中的
 - (BOOL)imageIsSelectedWithIndex:(NSInteger)index {
     PHAsset *currentAsset = self.assets[index];
@@ -176,4 +178,5 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
     }
     return NO;
 }
+
 @end

@@ -14,6 +14,7 @@
 
 //回调Block
 @property (nonatomic, copy) void(^imageIsSelectedBlock)(NSInteger index, BOOL IsSelected);
+@property (nonatomic, copy) BOOL(^shouldSelectItemBlock)();
 /**
  *  总是隐藏pageControl，默认为NO
  */

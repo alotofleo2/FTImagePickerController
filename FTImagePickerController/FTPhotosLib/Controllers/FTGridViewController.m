@@ -123,6 +123,17 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
     [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
 }
 
+- (BOOL)shouldSelectItem {
+    if (self.picker.maxMultipleCount > 0 && self.picker.maxMultipleCount == self.picker.selectedAssets.count) {
+        if ([self.picker.delegate respondsToSelector:@selector(assetsPickerVontrollerDidOverrunMaxMultipleCount:)]) {
+            [self.picker.delegate assetsPickerVontrollerDidOverrunMaxMultipleCount:self.picker];
+        }
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 #pragma mark - PHPhotoLibraryChangeObserver
 
 - (void)photoLibraryDidChange:(PHChange *)changeInstance {
@@ -198,7 +209,6 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
                                   }
                               }];
     
-    cell.allowsSelection = self.picker.allowsMultipleSelection;
     __weak typeof(self) weakSelf = self;
     [cell setItemSelectedBlock:^(BOOL isSelected) {
         PHAsset *asset = self.assets[indexPath.item];
@@ -207,8 +217,12 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
         } else {
             [weakSelf.picker deselectAsset:asset];
         }
-        
     }];
+    
+    [cell setShouldSelectItemBlock:^BOOL(){
+       return [weakSelf shouldSelectItem];
+    }];
+    cell.allowsSelection = self.picker.allowsMultipleSelection;
     
     if ([self.picker.selectedAssets containsObject:asset]) {
         cell.selected = YES;
@@ -222,22 +236,12 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
 
 #pragma mark - UICollectionViewDelegate
 
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.picker.maxMultipleCount > 0 && self.picker.maxMultipleCount == self.picker.selectedAssets.count) {
-        if ([self.picker.delegate respondsToSelector:@selector(assetsPickerVontrollerDidOverrunMaxMultipleCount:)]) {
-            [self.picker.delegate assetsPickerVontrollerDidOverrunMaxMultipleCount:self.picker];
-        }
-        return NO;
-    } else {
-        return YES;
-    }
-}
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
     FTBrowserViewController *browserVC = [[FTBrowserViewController alloc]initWithPicker:self.picker];
     browserVC.assets = self.assets;
     browserVC.currentIndex = indexPath.item;
+    
     __weak typeof(self) weakSelf = self;
     [browserVC setImageIsSelectedBlock:^(NSInteger index, BOOL isSelected) {
         FTGridViewCell *cell = (FTGridViewCell *)[weakSelf.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
@@ -245,15 +249,19 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
         PHAsset *asset = self.assets[index];
         if (isSelected) {
             [weakSelf.picker selectAsset:asset];
-            
         } else {
             [weakSelf.picker deselectAsset:asset];
         }
+    }];
+    
+    [browserVC setShouldSelectItemBlock:^BOOL{
+        return [weakSelf shouldSelectItem];
     }];
     [self.navigationController pushViewController:browserVC animated:YES];
     
     
 }
+
 
 
 #pragma mark - UIScrollViewDelegate

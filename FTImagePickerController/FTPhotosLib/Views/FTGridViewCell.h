@@ -17,4 +17,5 @@
 @property (nonatomic) BOOL allowsSelection;
 
 @property (nonatomic, copy) void(^itemSelectedBlock)(BOOL isSelected);
+@property (nonatomic, copy) BOOL(^shouldSelectItemBlock)();
 @end

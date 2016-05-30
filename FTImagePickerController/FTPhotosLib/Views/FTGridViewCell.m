@@ -66,17 +66,21 @@
             
         } else {
             
-
+            
             [_selectionButton removeFromSuperview];
         }
     }
 }
 
 - (void)didClickSelectionButton {
-    self.selectionButton.selected = !self.selectionButton.isSelected;
-    if (self.itemSelectedBlock) {
-        self.itemSelectedBlock(self.selectionButton.isSelected);
-    }
+    NSAssert(self.shouldSelectItemBlock, @"shouldSelectItemBlock cannot be nil");
+    if (self.shouldSelectItemBlock() || _selectionButton.isSelected) {
+        self.selectionButton.selected = !self.selectionButton.isSelected;
+        if (self.itemSelectedBlock) {
+            self.itemSelectedBlock(self.selectionButton.isSelected);
+        }
+    } 
+
 }
 
 - (void)setSelected:(BOOL)selected {
