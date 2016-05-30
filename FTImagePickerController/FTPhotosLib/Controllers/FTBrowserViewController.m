@@ -11,7 +11,8 @@
 #import "FTBrowserViewCell.h"
 #import "FTAssetsImageManager.h"
 
-
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 @interface FTBrowserViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, weak) FTImagePickerController *picker;
@@ -34,6 +35,7 @@
 NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
 
 - (void)initializeCollectionView {
+    
     CGRect frame = self.view.frame;
     frame.size.width += FTBrowserRightMargin;
     
@@ -129,11 +131,13 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
     PHAsset *asset = self.assets[indexPath.item];
     __weak typeof(cell) WeakCell = cell;
     __weak typeof(collectionView) weakCollectionView = collectionView;
+     CGFloat scale = [UIScreen mainScreen].scale;
     [[FTAssetsImageManager sharedInstance]requestImageWithAsset:asset
-                                                      targetSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
-                                                     contentMode:PHImageContentModeAspectFill options:self.options
+                                                      targetSize:CGSizeMake(kScreenWidth * scale, kScreenWidth * scale)
+                                                     contentMode:PHImageContentModeAspectFit options:self.options
                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                        [WeakCell setImage:result];
+                                                       NSLog(@"%@", result);
                                                        [weakCollectionView reloadItemsAtIndexPaths:@[indexPath]];
                                                    }];
     
@@ -154,7 +158,8 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
     for (NSNumber *num in indexs) {
         [temAssets addObject:self.assets[[num integerValue]]];
     }
-    [[FTAssetsImageManager sharedInstance].phCachingImageManager startCachingImagesForAssets:temAssets.copy targetSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) contentMode:PHImageContentModeAspectFill options:self.options];
+    CGFloat scale = [UIScreen mainScreen].scale;
+    [[FTAssetsImageManager sharedInstance].phCachingImageManager startCachingImagesForAssets:temAssets.copy targetSize:CGSizeMake(kScreenWidth * scale, kScreenWidth * scale) contentMode:PHImageContentModeAspectFill options:self.options];
 }
 
 #pragma mark scrollView delegate
@@ -170,11 +175,8 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
 
 #pragma mark 判断是否是被选中的
 - (BOOL)imageIsSelectedWithIndex:(NSInteger)index {
-    PHAsset *currentAsset = self.assets[index];
-    for (PHAsset *asset in self.picker.selectedAssets) {
-        if ([asset.localIdentifier isEqualToString:currentAsset.localIdentifier]) {
-            return YES;
-        }
+    if ([self.picker.selectedAssets containsObject:self.assets[index]]) {
+        return YES;
     }
     return NO;
 }

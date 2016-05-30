@@ -223,14 +223,7 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
        return [weakSelf shouldSelectItem];
     }];
     cell.allowsSelection = self.picker.allowsMultipleSelection;
-    
-    if ([self.picker.selectedAssets containsObject:asset]) {
-        cell.selected = YES;
-        [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
-    } else {
-        cell.selected = NO;
-    }
-    
+    cell.selectionButton.selected = [self.picker.selectedAssets containsObject:asset]? YES : NO;
     return cell;
 }
 
