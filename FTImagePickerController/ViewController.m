@@ -30,6 +30,7 @@
     picker.maxMultipleCount = 10;
     
     picker.allowsEditing = YES;
+    //返回图片大小
     picker.cropSize = CGSizeMake(750, 750);
     
     [self presentViewController:picker animated:YES completion:nil];

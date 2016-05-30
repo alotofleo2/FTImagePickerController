@@ -63,6 +63,11 @@
     if ([self.delegate respondsToSelector:@selector(assetsPickerController:didFinishPickingAssets:)]) {
         [self.delegate assetsPickerController:self didFinishPickingAssets:self.selectedAssets];
     }
+    if ([self.delegate respondsToSelector:@selector(assetsPickerController:didFinishPickingImages:)]) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self.delegate assetsPickerController:self  didFinishPickingImages:[self selectedImages]];
+        });
+    }
 }
 
 - (void)dismiss:(id)sender {
@@ -83,5 +88,20 @@
             badgeView.number = self.selectedAssets.count;
         }
     }
+}
+
+- (NSArray<UIImage *> *)selectedImages {
+    PHImageRequestOptions *options = [PHImageRequestOptions new];
+    options.synchronous = YES;
+    NSMutableArray *images = [NSMutableArray arrayWithCapacity:self.selectedAssets.count];
+    for (PHAsset *asset in self.selectedAssets) {
+        [[FTAssetsImageManager sharedInstance].phCachingImageManager requestImageForAsset:asset targetSize:CGSizeMake(MAXFLOAT, MAXFLOAT) contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            BOOL downloadFinined = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey] && ![[info objectForKey:PHImageResultIsDegradedKey] boolValue];
+            if (downloadFinined) {
+                [images addObject:result];
+            }
+        }];
+    }
+    return images;
 }
 @end

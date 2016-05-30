@@ -50,6 +50,8 @@ typedef NS_ENUM(NSInteger, FTImagePickerControllerSourceType) {
 
 - (void)assetsPickerController:(FTImagePickerController *)picker didFinishPickingAssets:(NSArray <PHAsset *>*)assets;
 
+- (void)assetsPickerController:(FTImagePickerController *)picker didFinishPickingImages:(NSArray <UIImage *>*)images;
+
 - (void)assetsPickerControllerDidCancel:(FTImagePickerController *)picker;
 
 - (void)assetsPickerVontrollerDidOverrunMaxMultipleCount:(FTImagePickerController *)picker;
