@@ -12,8 +12,9 @@
 
 @property (nonatomic, strong, readonly) UIImageView *thumbnailView;
 @property (nonatomic, copy) NSString *representedAssetIdentifier;
-
+@property (nonatomic, weak) UIButton *selectionButton;
 // Selection overlay
 @property (nonatomic) BOOL allowsSelection;
 
+@property (nonatomic, copy) void(^itemSelectedBlock)(BOOL isSelected);
 @end

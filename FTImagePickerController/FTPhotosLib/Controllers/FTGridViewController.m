@@ -11,6 +11,7 @@
 #import "FTAlbumsViewController.h"
 #import "FTGridViewCell.h"
 #import "FTBadgeView.h"
+#import "FTBrowserViewController.h"
 
 @implementation NSIndexSet (Convenience)
 
@@ -58,7 +59,7 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
 
 - (instancetype)initWithPicker:(FTImagePickerController *)picker {
     //Custom init. The picker contains custom information to create the FlowLayout
-    self.picker = picker;
+    
     
     screenWidth = CGRectGetWidth(picker.view.bounds);
     screenHeight = CGRectGetHeight(picker.view.bounds);
@@ -73,6 +74,7 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
     layout.minimumLineSpacing = spaceWidth;
     
     if (self = [super initWithCollectionViewLayout:layout]) {
+        self.picker = picker;
         CGFloat scale = [UIScreen mainScreen].scale;
         AssetGridThumbnailSize = CGSizeMake(layout.itemSize.width * scale, layout.itemSize.height * scale);
         self.collectionView.allowsMultipleSelection = picker.allowsMultipleSelection;
@@ -106,6 +108,8 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
         
         self.navigationItem.rightBarButtonItems = @[doneButtonItem, badgeButtonItem];
     }
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:(UIBarButtonItemStylePlain) target:nil action:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -195,6 +199,17 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
                               }];
     
     cell.allowsSelection = self.picker.allowsMultipleSelection;
+    __weak typeof(self) weakSelf = self;
+    [cell setItemSelectedBlock:^(BOOL isSelected) {
+        PHAsset *asset = self.assets[indexPath.item];
+        if (isSelected) {
+            [weakSelf.picker selectAsset:asset];
+        } else {
+            [weakSelf.picker deselectAsset:asset];
+        }
+        
+    }];
+    
     if ([self.picker.selectedAssets containsObject:asset]) {
         cell.selected = YES;
         [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
@@ -219,16 +234,27 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    PHAsset *asset = self.assets[indexPath.item];
+    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    FTBrowserViewController *browserVC = [[FTBrowserViewController alloc]initWithPicker:self.picker];
+    browserVC.assets = self.assets;
+    browserVC.currentIndex = indexPath.item;
+    __weak typeof(self) weakSelf = self;
+    [browserVC setImageIsSelectedBlock:^(NSInteger index, BOOL isSelected) {
+        FTGridViewCell *cell = (FTGridViewCell *)[weakSelf.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+        cell.selectionButton.selected = isSelected;
+        PHAsset *asset = self.assets[index];
+        if (isSelected) {
+            [weakSelf.picker selectAsset:asset];
+            
+        } else {
+            [weakSelf.picker deselectAsset:asset];
+        }
+    }];
+    [self.navigationController pushViewController:browserVC animated:YES];
     
-    [self.picker selectAsset:asset];
+    
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    PHAsset *asset = self.assets[indexPath.item];
-    
-    [self.picker deselectAsset:asset];
-}
 
 #pragma mark - UIScrollViewDelegate
 

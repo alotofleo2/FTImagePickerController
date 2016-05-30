@@ -10,6 +10,7 @@
 #import "FTAlbumsViewController.h"
 #import "FTImageClipViewController.h"
 #import "FTBadgeView.h"
+#import "FTAssetsImageManager.h"
 
 @import Photos;
 @implementation FTImagePickerController
@@ -19,7 +20,7 @@
         _selectedAssets = [[NSMutableArray alloc] init];
         _mediaTypes = @[@(PHAssetMediaTypeImage)];
         _navigationController = [[UINavigationController alloc] initWithRootViewController:[[FTAlbumsViewController alloc] init]];
-        _navigationController.navigationBar.barTintColor = [UIColor colorWithRed:71/255.0f green:71/255.0f blue:89/255.0f alpha:1.0f];
+        _navigationController.navigationBar.barTintColor = [UIColor colorWithRed:71/255.0f green:71/255.0f blue:89/255.0f alpha:0.8f];
         _navigationController.navigationBar.tintColor = [UIColor whiteColor];
         _navigationController.navigationBar.titleTextAttributes = @{
                                                                     NSForegroundColorAttributeName  :   [UIColor whiteColor],
@@ -68,7 +69,7 @@
     if ([self.delegate respondsToSelector:@selector(assetsPickerControllerDidCancel:)]) {
         [self.delegate assetsPickerControllerDidCancel:self];
     }
-    
+    [[FTAssetsImageManager sharedInstance]removeAllObjects];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

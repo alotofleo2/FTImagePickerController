@@ -10,8 +10,10 @@
 
 @interface FTGridViewCell ()
 
-@property (nonatomic, weak) UIView *selectedCoverView;
-@property (nonatomic, weak) UIButton *selectionButton;
+//@property (nonatomic, weak) UIView *selectedCoverView;
+
+
+@property (nonatomic, getter=isBtnSelected) BOOL btnSelected;
 
 @end
 
@@ -22,10 +24,13 @@
     self.thumbnailView.image = nil;
 }
 
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         
         CGFloat cellSize = self.contentView.bounds.size.width;
+        
+        _btnSelected = NO;
         
         _thumbnailView = [UIImageView new];
         _thumbnailView.frame = CGRectMake(0, 0, cellSize, cellSize);
@@ -42,16 +47,8 @@
 - (void)setAllowsSelection:(BOOL)allowsSelection {
     if (_allowsSelection != allowsSelection) {
         _allowsSelection = allowsSelection;
-        
+
         if (_allowsSelection) {
-            
-            UIView *selectedCoverView = [[UIView alloc] initWithFrame:self.bounds];
-            selectedCoverView.translatesAutoresizingMaskIntoConstraints = NO;
-            selectedCoverView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-            selectedCoverView.backgroundColor = [UIColor colorWithRed:0.24 green:0.47 blue:0.85 alpha:0.6];
-            selectedCoverView.hidden = YES;
-            [self.contentView addSubview:selectedCoverView];
-            _selectedCoverView = selectedCoverView;
             
             UIButton *selectionButton = [UIButton buttonWithType:UIButtonTypeCustom];
             selectionButton.frame = CGRectMake(2*self.bounds.size.width/3, 0*self.bounds.size.width/3, self.bounds.size.width/3, self.bounds.size.width/3);
@@ -63,25 +60,32 @@
             [selectionButton setImage:[UIImage imageNamed:[@"FTImagePickerController.bundle" stringByAppendingPathComponent:@"tickw.png"]] forState:UIControlStateNormal];
             [selectionButton setImage:[UIImage imageNamed:[@"FTImagePickerController.bundle" stringByAppendingPathComponent:@"tickH.png"]] forState:UIControlStateSelected];
             selectionButton.hidden = NO;
-            selectionButton.userInteractionEnabled = NO;
             [self.contentView addSubview:selectionButton];
+            [selectionButton addTarget:self action:@selector(didClickSelectionButton) forControlEvents:UIControlEventTouchUpInside];
             _selectionButton = selectionButton;
             
         } else {
             
-            [_selectedCoverView removeFromSuperview];
+
             [_selectionButton removeFromSuperview];
         }
+    }
+}
+
+- (void)didClickSelectionButton {
+    self.selectionButton.selected = !self.selectionButton.isSelected;
+    if (self.itemSelectedBlock) {
+        self.itemSelectedBlock(self.selectionButton.isSelected);
     }
 }
 
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
     
-    if (self.allowsSelection) {
-        _selectedCoverView.hidden = !selected;
-        _selectionButton.selected = selected;
-    }
+//    if (self.allowsSelection) {
+//        _selectedCoverView.hidden = !selected;
+//        _selectionButton.selected = selected;
+//    }
 }
 
 @end
