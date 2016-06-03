@@ -38,7 +38,7 @@
 
 #pragma mark - FTImagePickerControllerDelegate
 
-- (void)assetsPickerController:(FTImagePickerController *)picker didFinishPickingAssets:(NSArray *)assets {
+- (void)assetsPickerController:(FTImagePickerController *)picker didFinishPickingAssets:(NSArray<PHAsset *> *)assets {
     [picker.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 //    NSLog(@"当前选择图片集合 -> %@", assets);
 }

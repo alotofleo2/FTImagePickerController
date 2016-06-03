@@ -70,7 +70,6 @@
                 [self.delegate assetsPickerController:self  didFinishPickingImages:arr];
             });
         });
-
     }
 }
 
