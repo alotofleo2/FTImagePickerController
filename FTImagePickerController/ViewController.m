@@ -26,7 +26,7 @@
     
     picker.sourceType = FTImagePickerControllerSourceTypeSavedPhotosAlbum;
     
-    picker.allowsMultipleSelection = YES;
+//    picker.allowsMultipleSelection = YES;
     picker.maxMultipleCount = 10;
     
     picker.allowsEditing = YES;

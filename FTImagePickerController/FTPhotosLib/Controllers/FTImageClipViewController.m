@@ -126,11 +126,11 @@
 #pragma mark - Private Method
 
 - (UIImage *)clibImage:(UIImage *)image {
+    CGFloat dirveScale = [[UIScreen mainScreen] scale];
     CGFloat scale  = self.scrollView.zoomScale;
     CGPoint offset = self.scrollView.contentOffset;
-    CGFloat orignalScale = scale * [[UIScreen mainScreen] scale];
-    CGPoint orignalOffset = CGPointMake(offset.x * [[UIScreen mainScreen] scale],
-                                        offset.y * [[UIScreen mainScreen] scale]);
+    CGFloat orignalScale = scale * dirveScale / (self.scrollView.frame.size.width * dirveScale) * self.picker.cropSize.width;
+    CGPoint orignalOffset = CGPointMake(offset.x * dirveScale, offset.y * dirveScale);
     CGRect cropRect = CGRectMake(orignalOffset.x, orignalOffset.y, self.picker.cropSize.width, self.picker.cropSize.height);
     UIImage *resultImage = [image crop:cropRect scale:orignalScale];
     return resultImage;
