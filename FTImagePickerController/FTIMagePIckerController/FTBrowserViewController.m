@@ -137,7 +137,6 @@ NSString * const FTBrowserViewCellIdentifier = @"FTBrowserViewCellIdentifier";
                                                      contentMode:PHImageContentModeAspectFit options:self.options
                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                        [WeakCell setImage:result];
-                                                       NSLog(@"%@", result);
                                                        [weakCollectionView reloadItemsAtIndexPaths:@[indexPath]];
                                                    }];
     
