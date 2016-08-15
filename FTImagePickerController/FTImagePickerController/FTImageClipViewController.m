@@ -50,10 +50,12 @@
     self.imageView.clipsToBounds = YES;
     [self.scrollView addSubview:self.imageView];
     PHAsset *asset = self.picker.selectedAssets.firstObject;
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc]init];
+    options.resizeMode = PHImageRequestOptionsResizeModeFast;
     [[PHCachingImageManager defaultManager] requestImageForAsset:asset
                                                       targetSize:CGSizeMake(asset.pixelWidth, asset.pixelHeight)
                                                      contentMode:PHImageContentModeDefault
-                                                         options:nil
+                                                         options:options
                                                    resultHandler:^(UIImage *result, NSDictionary *info) {
                                                        // 这里会调多次，需重置transform得出正确的frame
                                                        self.imageView.transform = CGAffineTransformIdentity;

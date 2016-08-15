@@ -207,14 +207,13 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
                               resultHandler:^(UIImage *result, NSDictionary *info) {
                                   // Set the cell's thumbnail image if it's still showing the same asset.
                                   if ([cell.representedAssetIdentifier isEqualToString:asset.localIdentifier]) {
-                                      NSLog(@"%@ image", result);
                                       cell.thumbnailView.image = result;
                                   }
                               }];
     
     __weak typeof(self) weakSelf = self;
     [cell setItemSelectedBlock:^(BOOL isSelected) {
-        PHAsset *asset = self.assets[indexPath.item];
+        PHAsset *asset = weakSelf.assets[indexPath.item];
         if (isSelected) {
             [weakSelf.picker selectAsset:asset];
         } else {

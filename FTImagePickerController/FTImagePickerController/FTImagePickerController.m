@@ -14,6 +14,12 @@
 
 @import Photos;
 @implementation FTImagePickerController
+- (void)dealloc {
+    NSLog(@"dealloc");
+    
+    [[FTAssetsImageManager sharedInstance] removeAllObjects];
+    
+}
 
 - (instancetype)init {
     if (self = [super init]) {
