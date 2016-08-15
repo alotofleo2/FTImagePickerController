@@ -197,14 +197,17 @@ NSString * const FTGridViewCellIdentifier = @"FTGridViewCellIdentifier";
     FTGridViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:FTGridViewCellIdentifier forIndexPath:indexPath];
     cell.representedAssetIdentifier = asset.localIdentifier;
     
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc]init];
+    options.resizeMode = PHImageRequestOptionsResizeModeFast;
     // Request an image for the asset from the PHCachingImageManager.
     [self.imageManager requestImageForAsset:asset
                                  targetSize:AssetGridThumbnailSize
                                 contentMode:PHImageContentModeAspectFill
-                                    options:nil
+                                    options:options
                               resultHandler:^(UIImage *result, NSDictionary *info) {
                                   // Set the cell's thumbnail image if it's still showing the same asset.
                                   if ([cell.representedAssetIdentifier isEqualToString:asset.localIdentifier]) {
+                                      NSLog(@"%@ image", result);
                                       cell.thumbnailView.image = result;
                                   }
                               }];

@@ -12,18 +12,18 @@
 		B30CF2AB1CFA6C5600755DA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30CF2AA1CFA6C5600755DA8 /* ViewController.m */; };
 		B30CF2AE1CFA6C5600755DA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30CF2AC1CFA6C5600755DA8 /* Main.storyboard */; };
 		B30CF2B31CFA6C5600755DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30CF2B11CFA6C5600755DA8 /* LaunchScreen.storyboard */; };
-		B38017F91D31627E00AA0EB9 /* FTAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017E41D31627E00AA0EB9 /* FTAlbumsViewCell.m */; };
-		B38017FA1D31627E00AA0EB9 /* FTAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017E61D31627E00AA0EB9 /* FTAlbumsViewController.m */; };
-		B38017FB1D31627E00AA0EB9 /* FTAssetsImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017E81D31627E00AA0EB9 /* FTAssetsImageManager.m */; };
-		B38017FC1D31627E00AA0EB9 /* FTBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017EA1D31627E00AA0EB9 /* FTBadgeView.m */; };
-		B38017FD1D31627E00AA0EB9 /* FTBrowserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017EC1D31627E00AA0EB9 /* FTBrowserViewCell.m */; };
-		B38017FE1D31627E00AA0EB9 /* FTBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017EE1D31627E00AA0EB9 /* FTBrowserViewController.m */; };
-		B38017FF1D31627E00AA0EB9 /* FTGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017F01D31627E00AA0EB9 /* FTGridViewCell.m */; };
-		B38018001D31627E00AA0EB9 /* FTGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017F21D31627E00AA0EB9 /* FTGridViewController.m */; };
-		B38018011D31627E00AA0EB9 /* FTImageClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017F41D31627E00AA0EB9 /* FTImageClipViewController.m */; };
-		B38018021D31627E00AA0EB9 /* FTImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017F61D31627E00AA0EB9 /* FTImagePickerController.m */; };
-		B38018031D31627E00AA0EB9 /* UIImage+FTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B38017F81D31627E00AA0EB9 /* UIImage+FTHelper.m */; };
 		B38018051D31628B00AA0EB9 /* FTImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B38018041D31628B00AA0EB9 /* FTImagePickerController.bundle */; };
+		B3CFD5C61D32401C0051ED78 /* FTAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5B11D32401C0051ED78 /* FTAlbumsViewCell.m */; };
+		B3CFD5C71D32401C0051ED78 /* FTAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5B31D32401C0051ED78 /* FTAlbumsViewController.m */; };
+		B3CFD5C81D32401C0051ED78 /* FTAssetsImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5B51D32401C0051ED78 /* FTAssetsImageManager.m */; };
+		B3CFD5C91D32401C0051ED78 /* FTBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5B71D32401C0051ED78 /* FTBadgeView.m */; };
+		B3CFD5CA1D32401C0051ED78 /* FTBrowserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5B91D32401C0051ED78 /* FTBrowserViewCell.m */; };
+		B3CFD5CB1D32401C0051ED78 /* FTBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5BB1D32401C0051ED78 /* FTBrowserViewController.m */; };
+		B3CFD5CC1D32401C0051ED78 /* FTGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5BD1D32401C0051ED78 /* FTGridViewCell.m */; };
+		B3CFD5CD1D32401C0051ED78 /* FTGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5BF1D32401C0051ED78 /* FTGridViewController.m */; };
+		B3CFD5CE1D32401C0051ED78 /* FTImageClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5C11D32401C0051ED78 /* FTImageClipViewController.m */; };
+		B3CFD5CF1D32401C0051ED78 /* FTImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5C31D32401C0051ED78 /* FTImagePickerController.m */; };
+		B3CFD5D01D32401C0051ED78 /* UIImage+FTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CFD5C51D32401C0051ED78 /* UIImage+FTHelper.m */; };
 		B3FA67ED1CFBE16F0093C4B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3FA67EC1CFBE16F0093C4B9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -37,29 +37,29 @@
 		B30CF2AD1CFA6C5600755DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B30CF2B21CFA6C5600755DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B30CF2B41CFA6C5600755DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B38017E31D31627E00AA0EB9 /* FTAlbumsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAlbumsViewCell.h; sourceTree = "<group>"; };
-		B38017E41D31627E00AA0EB9 /* FTAlbumsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAlbumsViewCell.m; sourceTree = "<group>"; };
-		B38017E51D31627E00AA0EB9 /* FTAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAlbumsViewController.h; sourceTree = "<group>"; };
-		B38017E61D31627E00AA0EB9 /* FTAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAlbumsViewController.m; sourceTree = "<group>"; };
-		B38017E71D31627E00AA0EB9 /* FTAssetsImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAssetsImageManager.h; sourceTree = "<group>"; };
-		B38017E81D31627E00AA0EB9 /* FTAssetsImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAssetsImageManager.m; sourceTree = "<group>"; };
-		B38017E91D31627E00AA0EB9 /* FTBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBadgeView.h; sourceTree = "<group>"; };
-		B38017EA1D31627E00AA0EB9 /* FTBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBadgeView.m; sourceTree = "<group>"; };
-		B38017EB1D31627E00AA0EB9 /* FTBrowserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBrowserViewCell.h; sourceTree = "<group>"; };
-		B38017EC1D31627E00AA0EB9 /* FTBrowserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBrowserViewCell.m; sourceTree = "<group>"; };
-		B38017ED1D31627E00AA0EB9 /* FTBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBrowserViewController.h; sourceTree = "<group>"; };
-		B38017EE1D31627E00AA0EB9 /* FTBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBrowserViewController.m; sourceTree = "<group>"; };
-		B38017EF1D31627E00AA0EB9 /* FTGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGridViewCell.h; sourceTree = "<group>"; };
-		B38017F01D31627E00AA0EB9 /* FTGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGridViewCell.m; sourceTree = "<group>"; };
-		B38017F11D31627E00AA0EB9 /* FTGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGridViewController.h; sourceTree = "<group>"; };
-		B38017F21D31627E00AA0EB9 /* FTGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGridViewController.m; sourceTree = "<group>"; };
-		B38017F31D31627E00AA0EB9 /* FTImageClipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTImageClipViewController.h; sourceTree = "<group>"; };
-		B38017F41D31627E00AA0EB9 /* FTImageClipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTImageClipViewController.m; sourceTree = "<group>"; };
-		B38017F51D31627E00AA0EB9 /* FTImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTImagePickerController.h; sourceTree = "<group>"; };
-		B38017F61D31627E00AA0EB9 /* FTImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTImagePickerController.m; sourceTree = "<group>"; };
-		B38017F71D31627E00AA0EB9 /* UIImage+FTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FTHelper.h"; sourceTree = "<group>"; };
-		B38017F81D31627E00AA0EB9 /* UIImage+FTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FTHelper.m"; sourceTree = "<group>"; };
 		B38018041D31628B00AA0EB9 /* FTImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FTImagePickerController.bundle; sourceTree = "<group>"; };
+		B3CFD5B01D32401C0051ED78 /* FTAlbumsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAlbumsViewCell.h; sourceTree = "<group>"; };
+		B3CFD5B11D32401C0051ED78 /* FTAlbumsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAlbumsViewCell.m; sourceTree = "<group>"; };
+		B3CFD5B21D32401C0051ED78 /* FTAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAlbumsViewController.h; sourceTree = "<group>"; };
+		B3CFD5B31D32401C0051ED78 /* FTAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAlbumsViewController.m; sourceTree = "<group>"; };
+		B3CFD5B41D32401C0051ED78 /* FTAssetsImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAssetsImageManager.h; sourceTree = "<group>"; };
+		B3CFD5B51D32401C0051ED78 /* FTAssetsImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAssetsImageManager.m; sourceTree = "<group>"; };
+		B3CFD5B61D32401C0051ED78 /* FTBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBadgeView.h; sourceTree = "<group>"; };
+		B3CFD5B71D32401C0051ED78 /* FTBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBadgeView.m; sourceTree = "<group>"; };
+		B3CFD5B81D32401C0051ED78 /* FTBrowserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBrowserViewCell.h; sourceTree = "<group>"; };
+		B3CFD5B91D32401C0051ED78 /* FTBrowserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBrowserViewCell.m; sourceTree = "<group>"; };
+		B3CFD5BA1D32401C0051ED78 /* FTBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBrowserViewController.h; sourceTree = "<group>"; };
+		B3CFD5BB1D32401C0051ED78 /* FTBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTBrowserViewController.m; sourceTree = "<group>"; };
+		B3CFD5BC1D32401C0051ED78 /* FTGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGridViewCell.h; sourceTree = "<group>"; };
+		B3CFD5BD1D32401C0051ED78 /* FTGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGridViewCell.m; sourceTree = "<group>"; };
+		B3CFD5BE1D32401C0051ED78 /* FTGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGridViewController.h; sourceTree = "<group>"; };
+		B3CFD5BF1D32401C0051ED78 /* FTGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGridViewController.m; sourceTree = "<group>"; };
+		B3CFD5C01D32401C0051ED78 /* FTImageClipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTImageClipViewController.h; sourceTree = "<group>"; };
+		B3CFD5C11D32401C0051ED78 /* FTImageClipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTImageClipViewController.m; sourceTree = "<group>"; };
+		B3CFD5C21D32401C0051ED78 /* FTImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTImagePickerController.h; sourceTree = "<group>"; };
+		B3CFD5C31D32401C0051ED78 /* FTImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTImagePickerController.m; sourceTree = "<group>"; };
+		B3CFD5C41D32401C0051ED78 /* UIImage+FTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FTHelper.h"; sourceTree = "<group>"; };
+		B3CFD5C51D32401C0051ED78 /* UIImage+FTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FTHelper.m"; sourceTree = "<group>"; };
 		B3FA67EC1CFBE16F0093C4B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,8 +93,8 @@
 		B30CF2A21CFA6C5600755DA8 /* FTImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
+				B3CFD5AF1D32401C0051ED78 /* FTImagePickerController */,
 				B38018041D31628B00AA0EB9 /* FTImagePickerController.bundle */,
-				B38017E21D31627E00AA0EB9 /* FTImagePIckerController */,
 				B30CF2A61CFA6C5600755DA8 /* AppDelegate.h */,
 				B30CF2A71CFA6C5600755DA8 /* AppDelegate.m */,
 				B30CF2A91CFA6C5600755DA8 /* ViewController.h */,
@@ -116,66 +116,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B38017E21D31627E00AA0EB9 /* FTImagePIckerController */ = {
+		B3CFD5AF1D32401C0051ED78 /* FTImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
-				B38018071D31630C00AA0EB9 /* Views */,
-				B38018061D3162E900AA0EB9 /* Controllers */,
-				B38018081D31631500AA0EB9 /* Others */,
-				B38018091D31632000AA0EB9 /* Category */,
+				B3CFD5B01D32401C0051ED78 /* FTAlbumsViewCell.h */,
+				B3CFD5B11D32401C0051ED78 /* FTAlbumsViewCell.m */,
+				B3CFD5B21D32401C0051ED78 /* FTAlbumsViewController.h */,
+				B3CFD5B31D32401C0051ED78 /* FTAlbumsViewController.m */,
+				B3CFD5B41D32401C0051ED78 /* FTAssetsImageManager.h */,
+				B3CFD5B51D32401C0051ED78 /* FTAssetsImageManager.m */,
+				B3CFD5B61D32401C0051ED78 /* FTBadgeView.h */,
+				B3CFD5B71D32401C0051ED78 /* FTBadgeView.m */,
+				B3CFD5B81D32401C0051ED78 /* FTBrowserViewCell.h */,
+				B3CFD5B91D32401C0051ED78 /* FTBrowserViewCell.m */,
+				B3CFD5BA1D32401C0051ED78 /* FTBrowserViewController.h */,
+				B3CFD5BB1D32401C0051ED78 /* FTBrowserViewController.m */,
+				B3CFD5BC1D32401C0051ED78 /* FTGridViewCell.h */,
+				B3CFD5BD1D32401C0051ED78 /* FTGridViewCell.m */,
+				B3CFD5BE1D32401C0051ED78 /* FTGridViewController.h */,
+				B3CFD5BF1D32401C0051ED78 /* FTGridViewController.m */,
+				B3CFD5C01D32401C0051ED78 /* FTImageClipViewController.h */,
+				B3CFD5C11D32401C0051ED78 /* FTImageClipViewController.m */,
+				B3CFD5C21D32401C0051ED78 /* FTImagePickerController.h */,
+				B3CFD5C31D32401C0051ED78 /* FTImagePickerController.m */,
+				B3CFD5C41D32401C0051ED78 /* UIImage+FTHelper.h */,
+				B3CFD5C51D32401C0051ED78 /* UIImage+FTHelper.m */,
 			);
-			name = FTImagePIckerController;
-			path = FTIMagePIckerController;
-			sourceTree = "<group>";
-		};
-		B38018061D3162E900AA0EB9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B38017E51D31627E00AA0EB9 /* FTAlbumsViewController.h */,
-				B38017E61D31627E00AA0EB9 /* FTAlbumsViewController.m */,
-				B38017ED1D31627E00AA0EB9 /* FTBrowserViewController.h */,
-				B38017EE1D31627E00AA0EB9 /* FTBrowserViewController.m */,
-				B38017F11D31627E00AA0EB9 /* FTGridViewController.h */,
-				B38017F21D31627E00AA0EB9 /* FTGridViewController.m */,
-				B38017F31D31627E00AA0EB9 /* FTImageClipViewController.h */,
-				B38017F41D31627E00AA0EB9 /* FTImageClipViewController.m */,
-				B38017F51D31627E00AA0EB9 /* FTImagePickerController.h */,
-				B38017F61D31627E00AA0EB9 /* FTImagePickerController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		B38018071D31630C00AA0EB9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B38017E31D31627E00AA0EB9 /* FTAlbumsViewCell.h */,
-				B38017E41D31627E00AA0EB9 /* FTAlbumsViewCell.m */,
-				B38017E91D31627E00AA0EB9 /* FTBadgeView.h */,
-				B38017EA1D31627E00AA0EB9 /* FTBadgeView.m */,
-				B38017EB1D31627E00AA0EB9 /* FTBrowserViewCell.h */,
-				B38017EC1D31627E00AA0EB9 /* FTBrowserViewCell.m */,
-				B38017EF1D31627E00AA0EB9 /* FTGridViewCell.h */,
-				B38017F01D31627E00AA0EB9 /* FTGridViewCell.m */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		B38018081D31631500AA0EB9 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-				B38017E71D31627E00AA0EB9 /* FTAssetsImageManager.h */,
-				B38017E81D31627E00AA0EB9 /* FTAssetsImageManager.m */,
-			);
-			name = Others;
-			sourceTree = "<group>";
-		};
-		B38018091D31632000AA0EB9 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				B38017F71D31627E00AA0EB9 /* UIImage+FTHelper.h */,
-				B38017F81D31627E00AA0EB9 /* UIImage+FTHelper.m */,
-			);
-			name = Category;
+			path = FTImagePickerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,20 +217,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B38017FB1D31627E00AA0EB9 /* FTAssetsImageManager.m in Sources */,
-				B38018021D31627E00AA0EB9 /* FTImagePickerController.m in Sources */,
-				B38017FC1D31627E00AA0EB9 /* FTBadgeView.m in Sources */,
+				B3CFD5C81D32401C0051ED78 /* FTAssetsImageManager.m in Sources */,
+				B3CFD5CF1D32401C0051ED78 /* FTImagePickerController.m in Sources */,
+				B3CFD5C91D32401C0051ED78 /* FTBadgeView.m in Sources */,
 				B30CF2AB1CFA6C5600755DA8 /* ViewController.m in Sources */,
-				B38018001D31627E00AA0EB9 /* FTGridViewController.m in Sources */,
+				B3CFD5CD1D32401C0051ED78 /* FTGridViewController.m in Sources */,
 				B30CF2A81CFA6C5600755DA8 /* AppDelegate.m in Sources */,
-				B38017FF1D31627E00AA0EB9 /* FTGridViewCell.m in Sources */,
-				B38018011D31627E00AA0EB9 /* FTImageClipViewController.m in Sources */,
-				B38017F91D31627E00AA0EB9 /* FTAlbumsViewCell.m in Sources */,
-				B38017FA1D31627E00AA0EB9 /* FTAlbumsViewController.m in Sources */,
+				B3CFD5CC1D32401C0051ED78 /* FTGridViewCell.m in Sources */,
+				B3CFD5CE1D32401C0051ED78 /* FTImageClipViewController.m in Sources */,
+				B3CFD5C61D32401C0051ED78 /* FTAlbumsViewCell.m in Sources */,
+				B3CFD5C71D32401C0051ED78 /* FTAlbumsViewController.m in Sources */,
 				B30CF2A51CFA6C5600755DA8 /* main.m in Sources */,
-				B38017FD1D31627E00AA0EB9 /* FTBrowserViewCell.m in Sources */,
-				B38017FE1D31627E00AA0EB9 /* FTBrowserViewController.m in Sources */,
-				B38018031D31627E00AA0EB9 /* UIImage+FTHelper.m in Sources */,
+				B3CFD5CA1D32401C0051ED78 /* FTBrowserViewCell.m in Sources */,
+				B3CFD5CB1D32401C0051ED78 /* FTBrowserViewController.m in Sources */,
+				B3CFD5D01D32401C0051ED78 /* UIImage+FTHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
