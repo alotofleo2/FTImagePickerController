@@ -53,7 +53,14 @@ static NSString * const FTAlbumsViewCellReuseIdentifier = @"FTAlbumsViewCellReus
         self.tableView.bounces = NO;
     } else {
         
-        self.imageManager = [[PHCachingImageManager alloc] init];
+        __weak typeof(self) weakSelf = self;
+        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+            if (status != PHAuthorizationStatusAuthorized) {
+                return ;
+            }
+            weakSelf.imageManager = [[PHCachingImageManager alloc] init];
+            
+        }];
         
         PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
         PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
