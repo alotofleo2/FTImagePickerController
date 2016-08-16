@@ -41,57 +41,72 @@ static NSString * const FTAlbumsViewCellReuseIdentifier = @"FTAlbumsViewCellReus
     self.tableView.rowHeight = kAlbumThumbnailSize.height + 0.5;
     
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-    if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied) {
-        // 无权限
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 150)];
-        label.textColor = [UIColor darkTextColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:16.0];
-        label.text = @"请在\"设置\"->\"隐私\"->\"相册\"开启访问权限";
-        self.tableView.tableHeaderView = label;
-        self.tableView.tableFooterView = [UIView new];
-        self.tableView.bounces = NO;
-    } else {
-        
-        __weak typeof(self) weakSelf = self;
+    if (status == PHAuthorizationStatusNotDetermined) {
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-            if (status != PHAuthorizationStatusAuthorized) {
-                return ;
-            }
-            weakSelf.imageManager = [[PHCachingImageManager alloc] init];
-            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (status == PHAuthorizationStatusAuthorized) {
+                    [self showAlbums];
+                    [self.tableView reloadData];
+                } else {
+                    [self showNoAuthority];
+                }
+            });
         }];
-        
-        PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-        PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
-        self.fetchResults = @[smartAlbums, topLevelUserCollections];
-        
-        if (self.picker.allowsMultipleSelection) {
-            UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成"
-                                                                               style:UIBarButtonItemStyleDone
-                                                                              target:self.picker
-                                                                              action:@selector(finishPickingAssets:)];
-            doneButtonItem.enabled = self.picker.selectedAssets.count > 0;
-            
-            self.badgeView = [[FTBadgeView alloc] init];
-            self.badgeView.number = self.picker.selectedAssets.count;
-            UIBarButtonItem *badgeButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.badgeView];
-            
-            self.navigationItem.rightBarButtonItems = @[doneButtonItem, badgeButtonItem];
-        }
-        
-        if (self.picker.sourceType == FTImagePickerControllerSourceTypeSavedPhotosAlbum) {
-            [self pushCameraRollViewController];
-        }
-        
-        [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+    } else if (status == PHAuthorizationStatusAuthorized) {
+        [self showAlbums];
+    } else {
+        [self showNoAuthority];
     }
+}
+
+// 无权限
+- (void)showNoAuthority {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 150)];
+    label.textColor = [UIColor darkTextColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:16.0];
+    label.text = @"请在\"设置\"->\"隐私\"->\"相册\"开启访问权限";
+    self.tableView.tableHeaderView = label;
+    self.tableView.tableFooterView = [UIView new];
+    self.tableView.bounces = NO;
+}
+
+// 有权限
+- (void)showAlbums {
+    self.imageManager = [[PHCachingImageManager alloc] init];
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
+    self.fetchResults = @[smartAlbums, topLevelUserCollections];
+    
+    if (self.picker.allowsMultipleSelection) {
+        [self attachRightBarButton];
+    }
+    
+    if (self.picker.sourceType == FTImagePickerControllerSourceTypeSavedPhotosAlbum) {
+        [self pushCameraRollViewController];
+    }
+    
+    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
 }
 
 - (void)dealloc {
     
     [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
     
+}
+
+- (void)attachRightBarButton {
+    UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成"
+                                                                       style:UIBarButtonItemStyleDone
+                                                                      target:self.picker
+                                                                      action:@selector(finishPickingAssets:)];
+    doneButtonItem.enabled = self.picker.selectedAssets.count > 0;
+    
+    self.badgeView = [[FTBadgeView alloc] init];
+    self.badgeView.number = self.picker.selectedAssets.count;
+    UIBarButtonItem *badgeButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.badgeView];
+    
+    self.navigationItem.rightBarButtonItems = @[doneButtonItem, badgeButtonItem];
 }
 
 - (void)pushCameraRollViewController {
