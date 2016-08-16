@@ -17,7 +17,7 @@
 - (void)dealloc {
     NSLog(@"dealloc");
     
-    [[FTAssetsImageManager sharedInstance] removeAllObjects];
+//    [[FTAssetsImageManager sharedInstance] removeAllObjects];
     
 }
 

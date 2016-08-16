@@ -17,7 +17,9 @@
 @implementation FTAssetsImageManager
 - (void)removeAllObjects {
     [self.imageCache removeAllObjects];
-    [self.phCachingImageManager stopCachingImagesForAllAssets];
+    if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized) {
+        [self.phCachingImageManager stopCachingImagesForAllAssets];
+    }
     
     
 }
